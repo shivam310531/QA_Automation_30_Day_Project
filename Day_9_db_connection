@@ -1,0 +1,36 @@
+import mysql.connector
+
+connection = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Shalini26&",
+    database="Employees"
+)
+
+print("Database connected successfully")
+
+cursor = connection.cursor()
+cursor.execute("SELECT*FROM users")
+print("Query executed successfully")
+
+results = cursor.fetchall()
+print(results)
+
+cursor.execute("SELECT * FROM users WHERE id = 4")
+result = cursor.fetchone()
+
+expected_name ="Shivansh"
+if result[1] == expected_name:
+    print("PASS")
+else:
+    print("FAIL")
+
+
+try:
+    cursor.execute("SELECT*FROM wrong_table")
+
+    results = cursor.fetchall()
+    print(results)
+
+except Exception as e:
+    print("Database error:", e)

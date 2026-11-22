@@ -1,0 +1,26 @@
+#test_cases = [("admin", "admin123", True), ("admin", "wrong123", False), ("wronguser", "admin123",False),  ("wronguser", "wrong123", False)]
+
+def validate_login(username, password):
+    if username == "admin" and password == "admin123":
+        return True
+    else:
+        return False
+
+TC01=validate_login("admin", "admin123")
+TC02=validate_login("admin", "wrong123")
+TC03=validate_login("wronguser", "admin123")
+TC04=validate_login("wronguser", "wrong123")
+
+test_cases= ["TC01", "TC02", "TC03", "TC04"]
+for test in test_cases:
+    print("Tests:", test)
+
+for test in test_cases:
+    if test == "TC01":
+        print(TC01)    
+    elif test == "TC02":
+        print(TC02)
+    elif test == "TC03":
+        print(TC03)
+    elif test == "TC04":
+        print(TC04)        

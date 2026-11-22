@@ -1,0 +1,20 @@
+{
+    "users": [
+        {"test_case":"Valid Login",
+        "username":"admin",
+        "password":"admin123",
+        "expected_status":"PASS"},
+
+        {"test_case":"Invalid password",
+        "username":"admin",
+        "password":"wrong123",
+        "expected_status":"FAIL"},
+
+        {"test_case":"Invalid username",
+        "username":"wronguser",
+        "password":"admin123",
+        "expected_status":"FAIL"}
+
+    
+    ]
+}
